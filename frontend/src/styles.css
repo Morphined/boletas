@@ -83,12 +83,21 @@
 }
 
 body{
+
   background-color: #212529;
   color: whitesmoke;
 }
 
-.divPagination{
-  text-align: center;
-  display: block;
-  justify-content: center;
+.fondoMedio {
+  filter: saturate(80%);
 }
+
+
+.fondoMedio:hover {
+  transition:all .3s ease-in-out;
+  filter: saturate(190%);
+}
+
+
+
+
