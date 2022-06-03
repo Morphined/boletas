@@ -6,6 +6,7 @@ import { HeaderCompComponent } from './component/header-comp/header-comp.compone
 import { MedioComponent } from './medio/medio.component';
 import { ProximosComponent } from './proximos/proximos.component';
 import { CardeventoComponent } from './cardevento/cardevento.component';
+import { PaginationComponent } from './pagination/pagination.component';
 
 @NgModule({
   declarations: [
@@ -13,7 +14,8 @@ import { CardeventoComponent } from './cardevento/cardevento.component';
     HeaderCompComponent,
     MedioComponent,
     ProximosComponent,
-    CardeventoComponent
+    CardeventoComponent,
+    PaginationComponent
   ],
   imports: [
     BrowserModule

@@ -86,3 +86,9 @@ body{
   background-color: #212529;
   color: whitesmoke;
 }
+
+.divPagination{
+  text-align: center;
+  display: block;
+  justify-content: center;
+}
