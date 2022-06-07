@@ -1,12 +1,14 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
-import { SignupCompComponent } from './component/signup-comp/signup-comp.component';
-import { AppComponent } from './app.component';
+import { SignupCompComponent } from './components/signup-comp/signup-comp.component';
+import { LoginCompComponent } from './components/login-comp/login-comp.component';
+
 
 const routes: Routes = [
   { path: 'signup', component: SignupCompComponent },
-  { path: 'root', component: AppComponent}
+  {path: 'login', component: LoginCompComponent}
+
 ];
 
 

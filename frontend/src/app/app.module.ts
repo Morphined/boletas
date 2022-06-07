@@ -19,7 +19,9 @@ const routes: Routes = [
 { path: 'crearCuenta', component: SignupCompComponent },
 { path: 'entrar', component: LoginCompComponent },
 { path: '', component: InicioComponent, pathMatch:'full'},
-{ path: '**', redirectTo: '/', pathMatch: 'full' }, ];
+{ path: '**', redirectTo: '/', pathMatch: 'full' },
+
+ ];
 
 @NgModule({
   declarations: [
