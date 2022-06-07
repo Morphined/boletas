@@ -2,7 +2,14 @@ var express = require ('express');
 var mongoose = require ('mongoose');
 var app = express();
 var bodyParser= require('body-parser');
+var cors = require('cors');
 app.use(bodyParser.urlencoded({extended:true}));
+app.use(bodyParser.json());
+app.use(cors());
+
+var Usuarios_model = require('./models/Usuarios');
+
+
 
 mongoose.connect('mongodb+srv://proyectoFinal:Bootcamp123.@cluster0.1a8rx.mongodb.net/reventa?retryWrites=true&w=majority').then(function(db){
 
@@ -13,4 +20,79 @@ mongoose.connect('mongodb+srv://proyectoFinal:Bootcamp123.@cluster0.1a8rx.mongod
 
 app.listen(3000, function(){
     console.log('Servidor iniciado de manera exitosa en el puerto 3000');
+});
+
+app.get('/', function(req,res){
+    res.redirect('localhost:4200');
+});
+
+app.get('/obtenerUsuarios', async function(req,res){
+
+    console.log('Realizando operación de obtención de usuarios en base de datos');
+    var busqueda = await Usuarios_model.find();
+    res.send(busqueda);
+
+});
+
+app.post('/crearUsuario', async function(req,res){
+
+    var datos = req.body;
+    var operacion = new Usuarios_model(datos);
+    await operacion.save();
+    res.send(datos);
+
+});
+
+app.delete('/deleteUsuario/:id', async function(req,res){
+
+    var id = req.params.id;
+    await Usuarios_model.findByIdAndRemove(id);
+    res.send({mensaje: 'Usuario eliminado'});
+
+});
+
+app.put('/updateUsuario/:id', async function(req,res){
+    var datos = req.params.id;
+
+    var modificar =await Usuarios_model.findbyId(id);
+    modificar.nombres = req.body.nombres;
+    modificar.apellidos = req.body.apellidos;
+    modificar.tipo_identificacion = req.body.tipo_identificacion;
+    modificar.numero_identificacion = req.body.numero_identificacion;
+    modificar.ciudad = req.body.ciudad;
+    modificar.pais = req.body.pais;
+    modificar.email = req.body.email;
+    modificar.telefono = req.body.telefono;
+    modificar.contrasena = req.body.contrasena;
+    
+
+    
+});
+
+app.post('/hacerLogin/:email', async function(req,res){
+
+    var datos =req.params.email;
+    var loginHecho = true;
+    var busqueda = await Usuarios_model.findOne({email: datos});
+    if (busqueda != ''){
+        return {email:datos, login: loginHecho};
+    } else{
+
+        return {login: false};
+
+    };
+
+
 })
+
+app.get('/obtenerUsuario/:email', async function(req,res){
+
+    var email = req.params.email;
+    var busqueda = await Usuarios_model.findOne({email: email});
+    return busqueda;
+
+
+})
+
+
+
