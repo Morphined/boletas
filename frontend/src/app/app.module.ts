@@ -13,6 +13,7 @@ import { PaginationComponent } from './components/pagination/pagination.componen
 import { LoginCompComponent } from './components/login-comp/login-comp.component';
 import { SignupCompComponent } from './components/signup-comp/signup-comp.component';
 import { InicioComponent } from './components/inicio/inicio.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 
 const routes: Routes = [
@@ -33,7 +34,8 @@ const routes: Routes = [
     PaginationComponent,
     LoginCompComponent,
     SignupCompComponent,
-    InicioComponent
+    InicioComponent,
+    FooterComponent
   ],
   imports: [
   BrowserModule, 
