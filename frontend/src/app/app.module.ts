@@ -18,13 +18,14 @@ import { SignupCompComponent } from './components/signup-comp/signup-comp.compon
 import { InicioComponent } from './components/inicio/inicio.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { CrearEventoComponent } from './components/crear-evento/crear-evento.component';
-
+import { NewEventCompComponent } from './components/new-event-comp/new-event-comp.component';
 
 
 const routes: Routes = [
 { path: 'crearCuenta', component: SignupCompComponent },
 { path: 'crearEvento', component: CrearEventoComponent },
 { path: 'entrar', component: LoginCompComponent },
+{path: 'newEvent', component: NewEventCompComponent},
 { path: '', component: InicioComponent, pathMatch:'full'},
 { path: '**', redirectTo: '/', pathMatch: 'full' },
 
@@ -42,7 +43,8 @@ const routes: Routes = [
     SignupCompComponent,
     InicioComponent,
     FooterComponent,
-    CrearEventoComponent
+    CrearEventoComponent,
+    NewEventCompComponent
   ],
   imports: [
     FormsModule,

@@ -8,7 +8,7 @@ app.use(bodyParser.json());
 app.use(cors());
 
 var Usuarios_model = require('./models/Usuarios');
-
+var eventos_model = require("./models/eventos")
 
 
 mongoose.connect('mongodb+srv://proyectoFinal:Bootcamp123.@cluster0.1a8rx.mongodb.net/reventa?retryWrites=true&w=majority').then(function(db){
@@ -83,7 +83,7 @@ app.post('/hacerLogin/:email', async function(req,res){
     };
 
 
-})
+});
 
 app.get('/obtenerUsuario/:email', async function(req,res){
 
@@ -92,7 +92,16 @@ app.get('/obtenerUsuario/:email', async function(req,res){
     return busqueda;
 
 
-})
+});
+
+app.post('/evento', async function(req,res){
+    var datos_recibidos = req.body;
+    var doc_insertado = new eventos_model(datos_recibidos);
+    await doc_insertado.save();
+    res.send({respuesta:"evento agregado"});
+    console.log(doc_insertado)
+
+});
 
 
 
