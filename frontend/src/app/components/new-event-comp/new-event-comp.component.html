@@ -1,0 +1,125 @@
+<!-- Section: Design Block -->
+<section class="background-radial-gradient overflow-hidden">
+
+
+    <div class="container px-4 py-5 px-md-5 text-center text-lg-start my-5">
+        <div class="row gx-lg-5 align-items-center mb-5">
+
+
+            <div class="col-lg-6 mb-5 mb-lg-0 position-relative">
+                <div id="radius-shape-1" class="position-absolute rounded-circle shadow-5-strong"></div>
+                <div id="radius-shape-2" class="position-absolute shadow-5-strong"></div>
+
+                <div class="card bg-glass">
+                    <div class="card-body px-4 py-5 px-md-5">
+                        <form #eventoForm ="ngForm" (ngSubmit)="crearEvento(eventoForm)">
+                            <!-- 2 column grid layout with text inputs for the first and last names -->
+                            <div class="row">
+                                <div class="col-md-6 mb-4">
+                                    <div class="form-outline">
+                                        <label class='textoRegistro text-dark' for="form3Example1"><strong>Registro de
+                                                Evento</strong></label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-outline mb-4">
+                                <input type="text" id="form3Example3" class="form-control" name="nombreEvento" [(ngModel)]="servicioEvento.datos_evento.nombreEvento" />
+                                <label class='textoRegistro text-dark' for="form3Example3">Nombre de Evento</label>
+                            </div>
+                            <div class="form-outline mb-4">
+                                <input type="text" id="form3Example3" class="form-control" name="organizadorEvento" [(ngModel)]="servicioEvento.datos_evento.organizadorEvento" />
+                                <label class='textoRegistro text-dark' for="form3Example3">Organizador</label>
+                            </div>
+                            <div class="form-floating mb-4">
+                                <textarea class="form-control text-dark" placeholder="Leave a comment here"
+                                    id="floatingTextarea" name="descripcionEvento" [(ngModel)]="servicioEvento.datos_evento.descripcionEvento"></textarea>
+                                <label class="textoregistro text-dark" for="floatingTextarea">Descripcción</label>
+                            </div>
+                            <div class="form-outline mb-4">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" placeholder=""
+                                        aria-label="Recipient's username" aria-describedby="button-addon2" name="categoriaEvento" [(ngModel)]="servicioEvento.datos_evento.categoriaEvento">
+                                    <button class="btn btn-outline-secondary btn-dark" type="button"
+                                        id="button-addon2">Agregar</button>
+                                </div>
+                                <label class='textoRegistro text-dark' for="form3Example3">Categorías</label>
+                            </div>
+
+                            <div class="form-outline mb-4">
+                                <input type="date" id="form3Example3" class="form-control" name="fechaEvento" [(ngModel)]="servicioEvento.datos_evento.fechaEvento"/>
+                                <label class='textoRegistro text-dark' for="form3Example3">Fecha del Evento</label>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-6 mb-4">
+                                    <div class="form-outline">
+                                        <input type="time" id="form3Example1" class="form-control" name="horaInicioEvento" [(ngModel)]="servicioEvento.datos_evento.horaInicioEvento" />
+                                        <label class='textoRegistro text-dark' for="form3Example1">Hora de
+                                            Inicio</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 mb-4">
+                                    <div class="form-outline">
+                                        <input type="time" id="form3Example2" class="form-control" name="horaFinalEvento" [(ngModel)]="servicioEvento.datos_evento.horaFinalEvento"/>
+                                        <label class='textoRegistro text-dark' for="form3Example2">Hora de
+                                            Finalización</label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-6 mb-4">
+                                    <div class="form-outline">
+                                        <input type="text" id="form3Example1" class="form-control" name="ciudadEvento" [(ngModel)]="servicioEvento.datos_evento.ciudadEvento" />
+                                        <label class='textoRegistro text-dark' for="form3Example1">Ciudad</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 mb-4">
+                                    <div class="form-outline">
+                                        <input type="text" id="form3Example2" class="form-control" name="paisEvento" [(ngModel)]="servicioEvento.datos_evento.paisEvento"/>
+                                        <label class='textoRegistro text-dark' for="form3Example2">Pais</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-outline mb-4">
+                                <input type="text" id="form3Example3" class="form-control" name="direccionEvento" [(ngModel)]="servicioEvento.datos_evento.direccionEvento" />
+                                <label class='textoRegistro text-dark' for="form3Example3">Dirección</label>
+                            </div>
+                            <div class="form-outline mb-4">
+                                <input type="file" id="form3Example3" class="form-control" name="imagenEvento" [(ngModel)]="servicioEvento.datos_evento.imagenEvento"/>
+                                <label class='textoRegistro text-dark' for="form3Example3">Imagen Promocional</label>
+                            </div>
+
+
+                            <!-- Submit button -->
+                            <button type="submit" class="btn btn-primary btn-block mb-4">
+                                Aplicar
+                            </button>
+
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col cardHija">
+
+                <h1 class="mb-5">Registra tu evento</h1>
+                <div class="card">
+                    <img src="./assets/fondo1.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h3 class="card-title text-dark">Nombre de Envento</h3>
+                        <h6 class="card-title text-dark">Organizador</h6>
+                        <span class="badge bg-secondary">Categoria 1</span> &nbsp;
+                        <span class="badge bg-secondary">Categoria 2</span>
+                        
+                        <p class="card-text text-dark">Descripción: This is a longer card with supporting text below as a natural
+                            lead-in to additional content. This content is a little bit longer.</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- Section: Design Block -->
