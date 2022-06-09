@@ -1,3 +1,5 @@
+import { HttpClientModule } from '@angular/common/http';
+
 import { RouterModule, Routes } from '@angular/router';
 import {APP_BASE_HREF} from '@angular/common';  
 
@@ -16,6 +18,7 @@ import { SignupCompComponent } from './components/signup-comp/signup-comp.compon
 import { InicioComponent } from './components/inicio/inicio.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { CrearEventoComponent } from './components/crear-evento/crear-evento.component';
+
 
 
 const routes: Routes = [
