@@ -8,7 +8,8 @@ app.use(bodyParser.json());
 app.use(cors());
 
 var Usuarios_model = require('./models/Usuarios');
-var eventos_model = require("./models/eventos")
+var eventos_model = require("./models/eventos");
+const eventos = require('./models/eventos');
 
 
 mongoose.connect('mongodb+srv://proyectoFinal:Bootcamp123.@cluster0.1a8rx.mongodb.net/reventa?retryWrites=true&w=majority').then(function(db){
@@ -109,6 +110,8 @@ app.get('/obtenerEventos', async function(req,res){
     console.log('Realizando operación de obtención de usuarios en base de datos');
     var busqueda = await eventos_model.find();
     res.send(busqueda);
+
+    console.log(busqueda)
 
 });
 

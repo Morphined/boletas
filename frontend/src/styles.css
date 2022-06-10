@@ -104,4 +104,8 @@ transform:scale(1.04);
 overflow:hidden;
 }
 
+.divPagination{
+  text-align: center;
+  margin-top: 15px;
+}
 

@@ -1,7 +1,7 @@
 
 
 import { RouterModule, Routes } from '@angular/router';
-import {APP_BASE_HREF} from '@angular/common';  
+import {APP_BASE_HREF} from '@angular/common';
 
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -12,12 +12,15 @@ import { HeaderCompComponent } from './components/header-comp/header-comp.compon
 import { MedioComponent } from './components/medio/medio.component';
 import { ProximosComponent } from './components/proximos/proximos.component';
 import { CardeventoComponent } from './components/cardevento/cardevento.component';
-import { PaginationComponent } from './components/pagination/pagination.component';
+
 import { LoginCompComponent } from './components/login-comp/login-comp.component';
 import { SignupCompComponent } from './components/signup-comp/signup-comp.component';
 import { InicioComponent } from './components/inicio/inicio.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { NewEventCompComponent } from './components/new-event-comp/new-event-comp.component';
+import { objectToArrayPipe } from './objetcToArray.pipe';
+
+import { NgxPaginationModule } from 'ngx-pagination';
 
 
 const routes: Routes = [
@@ -36,17 +39,19 @@ const routes: Routes = [
     MedioComponent,
     ProximosComponent,
     CardeventoComponent,
-    PaginationComponent,
     LoginCompComponent,
     SignupCompComponent,
     InicioComponent,
     FooterComponent,
-    NewEventCompComponent
+    NewEventCompComponent,
+    objectToArrayPipe,
+
   ],
   imports: [
     FormsModule,
+    NgxPaginationModule,
   BrowserModule,
-  HttpClientModule, 
+  HttpClientModule,
   RouterModule.forRoot(routes),
   RouterModule],
   providers: [{provide: APP_BASE_HREF, useValue : '/' }],
