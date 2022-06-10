@@ -1,15 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 
+
+
 @Component({
   selector: 'login-comp',
   templateUrl: './login-comp.component.html',
   styleUrls: ['./login-comp.component.css']
 })
-export class LoginCompComponent implements OnInit {
+export class LoginCompComponent {
 
-  constructor() { }
-
-  ngOnInit(): void {
-  }
+  constructor(){}
 
 }

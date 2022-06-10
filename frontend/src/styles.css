@@ -60,10 +60,6 @@
   -webkit-overflow-scrolling: touch;
 }
 
-.medio{
-  color: white;
-}
-
 .proximos{
   text-align: center;
 }
@@ -86,6 +82,10 @@ body{
 
   background-color: #212529;
   color: whitesmoke;
+}
+
+.medio img {
+  height: 840px;
 }
 
 .fondoMedio {

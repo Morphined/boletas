@@ -12,6 +12,18 @@ export class LoginServService {
 
   URL_API = 'localhost:4200/';
   documentos: Usuario_modelo[]=[];
+  datos_Usuario:Usuario_modelo={
+    nombres:'',
+    apellidos:'',
+    tipo_identificacion:'',
+    numero_identificacion:'',
+    ciudad:'',
+    pais: '',
+    email:'',
+    telefono:'',
+    password:''
+  }
+
 
   obtenerUsuarios(){
     let peticion = this.http.get<Usuario_modelo[]>(this.URL_API+'/obtenerUsuarios');

@@ -10,6 +10,7 @@ export class EventoServiceService {
 
   
   URL_API = 'http://localhost:3000';
+  
   datos_evento:Evento_model={
     nombreEvento:'',
     organizadorEvento:'',
