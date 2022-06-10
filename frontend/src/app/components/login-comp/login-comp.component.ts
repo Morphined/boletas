@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
+import { LoginServService } from 'src/app/services/login-serv.service';
 
 
 
@@ -10,5 +12,8 @@ import { Component, OnInit } from '@angular/core';
 export class LoginCompComponent {
 
   constructor(){}
+
+  
+  
 
 }

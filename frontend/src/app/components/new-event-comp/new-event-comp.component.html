@@ -23,21 +23,21 @@
                                 </div>
                             </div>
                             <div class="form-outline mb-4">
-                                <input type="text" id="form3Example3" class="form-control" name="nombreEvento" [(ngModel)]="servicioEvento.datos_evento.nombreEvento" />
+                                <input type="text" id="form3Example3" class="form-control" #nombre name="nombreEvento" [(ngModel)]="servicioEvento.datos_evento.nombreEvento" />
                                 <label class='textoRegistro text-dark' for="form3Example3">Nombre de Evento</label>
                             </div>
                             <div class="form-outline mb-4">
-                                <input type="text" id="form3Example3" class="form-control" name="organizadorEvento" [(ngModel)]="servicioEvento.datos_evento.organizadorEvento" />
+                                <input type="text" id="form3Example3" #organizador class="form-control" name="organizadorEvento" [(ngModel)]="servicioEvento.datos_evento.organizadorEvento" />
                                 <label class='textoRegistro text-dark' for="form3Example3">Organizador</label>
                             </div>
                             <div class="form-floating mb-4">
-                                <textarea class="form-control text-dark" placeholder="Leave a comment here"
+                                <textarea #descripcion class="form-control text-dark" placeholder="Leave a comment here"
                                     id="floatingTextarea" name="descripcionEvento" [(ngModel)]="servicioEvento.datos_evento.descripcionEvento"></textarea>
                                 <label class="textoregistro text-dark" for="floatingTextarea">Descripcción</label>
                             </div>
                             <div class="form-outline mb-4">
                                 <div class="input-group">
-                                    <input type="text" class="form-control" placeholder=""
+                                    <input type="text" class="form-control" placeholder="" #categorias
                                         aria-label="Recipient's username" aria-describedby="button-addon2" name="categoriaEvento" [(ngModel)]="servicioEvento.datos_evento.categoriaEvento">
                                     <button class="btn btn-outline-secondary btn-dark" type="button"
                                         id="button-addon2">Agregar</button>
@@ -46,8 +46,8 @@
                             </div>
 
                             <div class="form-outline mb-4">
-                                <input type="date" id="form3Example3" class="form-control" name="fechaEvento" [(ngModel)]="servicioEvento.datos_evento.fechaEvento"/>
-                                <label class='textoRegistro text-dark' for="form3Example3">Fecha del Evento</label>
+                                <input type="date" id="form3Example3"   #fecha class="form-control" name="fechaEvento" [(ngModel)]="servicioEvento.datos_evento.fechaEvento"/>
+                                <label class='textoRegistro text-dark'  for="form3Example3">Fecha del Evento</label>
                             </div>
 
                             <div class="row">
@@ -107,13 +107,15 @@
                 <div class="card">
                     <img src="./assets/fondo1.jpg" class="card-img-top" alt="...">
                     <div class="card-body">
-                        <h3 class="card-title text-dark">Nombre de Envento</h3>
-                        <h6 class="card-title text-dark">Organizador</h6>
-                        <span class="badge bg-secondary">Categoria 1</span> &nbsp;
-                        <span class="badge bg-secondary">Categoria 2</span>
+                        <h3 class="card-title text-dark titulo">{{nombre.value}}</h3>
+                        <label for="" style="color: rgb(139, 139, 139); font-size: small;">{{fecha.value}}</label>
+                        <h6 class="card-title text-dark">{{organizador.value}}</h6>
+                        <hr style="color: grey;">
+                        <label class="lblCategoria">{{categorias.value}}</label> &nbsp;
+                        <label class="lblCategoria">{{categorias.value}}</label>
+                        <p class="card-text text-dark">{{descripcion.value}}</p>
                         
-                        <p class="card-text text-dark">Descripción: This is a longer card with supporting text below as a natural
-                            lead-in to additional content. This content is a little bit longer.</p>
+                        
                     </div>
                 </div>
             </div>
