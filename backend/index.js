@@ -40,6 +40,7 @@ app.post('/crearUsuario', async function(req,res){
     var operacion = new Usuarios_model(datos);
     await operacion.save();
     res.send(datos);
+    console.log("agregado")
 
 });
 
@@ -71,16 +72,16 @@ app.put('/updateUsuario/:id', async function(req,res){
 
 app.post('/hacerLogin/:email', async function(req,res){
 
-    var datos =req.params.email;
+    var email =req.params.email;
     var loginHecho = true;
-    var busqueda = await Usuarios_model.findOne({email: datos});
+    var busqueda = await Usuarios_model.findOne({email: email});
     if (busqueda != ''){
         return {email:datos, login: loginHecho};
     } else{
 
         return {login: false};
 
-    };
+    }; 
 
 
 });

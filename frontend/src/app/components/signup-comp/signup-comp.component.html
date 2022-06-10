@@ -23,7 +23,7 @@
   
           <div class="card bg-glass">
             <div class="card-body px-4 py-5 px-md-5">
-              <form>
+              <form #usuarioForm ="ngForm" (ngSubmit)="singUp(usuarioForm)">
                 <!-- 2 column grid layout with text inputs for the first and last names -->
                 <div class="row">
                     <div class="col-md-6 mb-4">
@@ -35,13 +35,13 @@
                 <div class="row">
                   <div class="col-md-6 mb-4">
                     <div class="form-outline">
-                      <input type="text" id="form3Example1" class="form-control" />
+                      <input type="text" [(ngModel)]="crearUsuario.datos_usuario.nombres"  class="form-control" name="txtNombres" />
                       <label class='textoRegistro' for="form3Example1">Nombres</label>
                     </div>
                   </div>
                   <div class="col-md-6 mb-4">
                     <div class="form-outline">
-                      <input type="text" id="form3Example2" class="form-control" />
+                      <input type="text" [(ngModel)]="crearUsuario.datos_usuario.apellidos"  class="form-control" name="txtApellidos" />
                       <label  class='textoRegistro' for="form3Example2">Apellidos</label>
                     </div>
                   </div>
@@ -49,13 +49,13 @@
                 <div class="row">
                     <div class="col-md-6 mb-4">
                       <div class="form-outline">
-                        <input type="text" id="form3Example1" class="form-control" />
+                        <input type="text" [(ngModel)]="crearUsuario.datos_usuario.tipo_identificacion"  class="form-control" name="txtTipoIdentificacion" />
                         <label class='textoRegistro' for="form3Example1">Tipo identificación</label>
                       </div>
                     </div>
                     <div class="col-md-6 mb-4">
                       <div class="form-outline">
-                        <input type="text" id="form3Example2" class="form-control" />
+                        <input type="text" [(ngModel)]="crearUsuario.datos_usuario.numero_identificacion"  class="form-control" name="txtIdentificacion"/>
                         <label  class='textoRegistro' for="form3Example2">Número de identificación</label>
                       </div>
                     </div>
@@ -63,13 +63,13 @@
                   <div class="row">
                     <div class="col-md-6 mb-4">
                       <div class="form-outline">
-                        <input type="text" id="form3Example1" class="form-control" />
+                        <input type="text" [(ngModel)]="crearUsuario.datos_usuario.ciudad"  class="form-control" name="txtCiudad" />
                         <label class='textoRegistro' for="form3Example1">Ciudad</label>
                       </div>
                     </div>
                     <div class="col-md-6 mb-4">
                       <div class="form-outline">
-                        <input type="text" id="form3Example2" class="form-control" />
+                        <input type="text" [(ngModel)]="crearUsuario.datos_usuario.pais"  class="form-control" name="txtPais" />
                         <label  class='textoRegistro' for="form3Example2">Pais</label>
                       </div>
                     </div>
@@ -78,31 +78,31 @@
   
                 <!-- Email input -->
                 <div class="form-outline mb-4">
-                  <input type="email" id="form3Example3" class="form-control" />
+                  <input type="email" [(ngModel)]="crearUsuario.datos_usuario.email"  class="form-control" name="txtEmail" />
                   <label class='textoRegistro' for="form3Example3">Email</label>
                 </div>
                 <div class="form-outline mb-4">
-                    <input type="email" id="form3Example3" class="form-control" />
+                    <input type="email" [(ngModel)]="crearUsuario.datos_usuario.telefono"  class="form-control" name="txtTelefono" />
                     <label class='textoRegistro' for="form3Example3">Teléfono</label>
                   </div>
   
                 <!-- Password input -->
                 <div class="form-outline mb-4">
-                  <input type="password" id="form3Example4" class="form-control" />
+                  <input type="password" [(ngModel)]="crearUsuario.datos_usuario.password"  class="form-control" name="txtPassword" />
                   <label class='textoRegistro' for="form3Example4">Password</label>
                 </div>
   
                 <!-- Checkbox -->
                 <div class="form-check d-flex justify-content-center mb-4">
-                  <input class='textoRegistro' type="checkbox" value="" id="form2Example33" checked />
+                  <input class='textoRegistro' type="checkbox" value=""  name="checkTerminos" />
                   <label class='textoRegistro' for="form2Example33">
                     Acepto términos y condiciones
                   </label>
                 </div>
   
                 <!-- Submit button -->
-                <button type="submit" class="btn btn-primary btn-block mb-4">
-                  Sign up
+                <button type="submit" class="btn btn-primary btn-block mb-4" name="btnRegistrarUsuario">
+                  Crear Usuario
                 </button>
   
                 

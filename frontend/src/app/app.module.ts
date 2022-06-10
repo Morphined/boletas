@@ -17,13 +17,11 @@ import { LoginCompComponent } from './components/login-comp/login-comp.component
 import { SignupCompComponent } from './components/signup-comp/signup-comp.component';
 import { InicioComponent } from './components/inicio/inicio.component';
 import { FooterComponent } from './components/footer/footer.component';
-import { CrearEventoComponent } from './components/crear-evento/crear-evento.component';
 import { NewEventCompComponent } from './components/new-event-comp/new-event-comp.component';
 
 
 const routes: Routes = [
-{ path: 'crearCuenta', component: SignupCompComponent },
-{ path: 'crearEvento', component: CrearEventoComponent },
+{ path: 'crearUsuario', component: SignupCompComponent },
 { path: 'entrar', component: LoginCompComponent },
 {path: 'newEvent', component: NewEventCompComponent},
 { path: '', component: InicioComponent, pathMatch:'full'},
@@ -43,11 +41,11 @@ const routes: Routes = [
     SignupCompComponent,
     InicioComponent,
     FooterComponent,
-    CrearEventoComponent,
     NewEventCompComponent
   ],
   imports: [
-    FormsModule,
+  FormsModule,
+  HttpClientModule,
   BrowserModule, 
   RouterModule.forRoot(routes),
   RouterModule],
