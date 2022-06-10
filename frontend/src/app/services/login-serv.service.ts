@@ -10,7 +10,7 @@ export class LoginServService {
   constructor(public http: HttpClient) { 
   }
 
-  URL_API = 'localhost:4200/';
+  URL_API = 'http://localhost:3000';
   documentos: Usuario_modelo[]=[];
   datos_Usuario:Usuario_modelo={
     nombres:'',
