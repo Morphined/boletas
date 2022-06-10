@@ -3,7 +3,7 @@ import {APP_BASE_HREF} from '@angular/common';
 
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
 import { HeaderCompComponent } from './components/header-comp/header-comp.component';
@@ -45,7 +45,8 @@ const routes: Routes = [
   ],
   imports: [
     FormsModule,
-  BrowserModule, 
+  BrowserModule,
+  HttpClientModule, 
   RouterModule.forRoot(routes),
   RouterModule],
   providers: [{provide: APP_BASE_HREF, useValue : '/' }],
