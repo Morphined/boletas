@@ -21,10 +21,25 @@
     <app-proximos></app-proximos>
     <div class="row row-cols-1 row-cols-md-4 g-4 m-3">
 
-          <app-cardevento></app-cardevento>
-          <app-cardevento></app-cardevento>
-          <app-cardevento></app-cardevento>
-          <app-cardevento></app-cardevento>
+          <div *ngFor="let i of servicioEvento.documentos">
+            <div class="col cardHija">
+              <div class="card h-100">
+                <img src="./assets/fondo1.jpg" class="card-img-top" alt="...">
+                <div class="card-body fondo">
+                  <h5 class="card-title text-dark titulo">{{i.nombreEvento}}"</h5>
+                  <label for="" style="color: rgb(139, 139, 139); font-size: small;">{{i.fechaEvento}}</label>
+                  <h6 class="card-title text-dark">{{i.organizadorEvento}}</h6>
+                  
+                  <hr style="color: grey;">
+                  <label class="lblCategoria">{{i.categoriaEvento}}</label>
+                  <p class="card-text text-dark">{{i.descripcionEvento}}</p>
+                  <hr style="color: grey;">
+                  <button type="button" class="btn btn-info">Ver</button>
+                  <button type="button" class="btn btn-info">Comprar</button>
+                </div>
+              </div>
+            </div>
+          </div>
 
 </div>
 

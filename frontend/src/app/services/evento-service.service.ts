@@ -10,6 +10,8 @@ export class EventoServiceService {
 
   
   URL_API = 'http://localhost:3000';
+
+  documentos: Evento_model[]=[];
   
   datos_evento:Evento_model={
     nombreEvento:'',
@@ -31,4 +33,10 @@ export class EventoServiceService {
     let peticion = this.http.post(this.URL_API+"/evento",datos)
     return peticion;
   }
+  
+  obtenerEventos(){
+    let peticion = this.http.get<Evento_model[]>(this.URL_API + '/obtenerEventos');
+    return peticion;
+  }
 }
+

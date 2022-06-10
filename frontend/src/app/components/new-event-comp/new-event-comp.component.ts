@@ -12,6 +12,7 @@ export class NewEventCompComponent implements OnInit {
   constructor(public servicioEvento:EventoServiceService) { }
 
   ngOnInit(): void {
+    
   }
   crearEvento(form:NgForm){
 

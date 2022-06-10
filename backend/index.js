@@ -104,5 +104,14 @@ app.post('/evento', async function(req,res){
 
 });
 
+app.get('/obtenerEventos', async function(req,res){
+
+    console.log('Realizando operación de obtención de usuarios en base de datos');
+    var busqueda = await eventos_model.find();
+    res.send(busqueda);
+
+});
+
+
 
 

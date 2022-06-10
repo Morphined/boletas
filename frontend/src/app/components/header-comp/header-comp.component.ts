@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
+
 @Component({
   selector: 'app-header-comp',
   templateUrl: './header-comp.component.html',
@@ -11,5 +12,7 @@ export class HeaderCompComponent implements OnInit {
 
   ngOnInit(): void {
   }
+
+  
 
 }

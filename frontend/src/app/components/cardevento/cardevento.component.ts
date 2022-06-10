@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { EventoServiceService } from 'src/app/services/evento-service.service';
 
 @Component({
   selector: 'app-cardevento',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CardeventoComponent implements OnInit {
 
-  constructor() { }
+  constructor(public servicioEvento:EventoServiceService) { }
 
   ngOnInit(): void {
   }
