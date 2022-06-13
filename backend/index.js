@@ -11,6 +11,8 @@ var Usuarios_model = require('./models/Usuarios');
 var eventos_model = require("./models/eventos");
 const eventos = require('./models/eventos');
 
+var usuarioActual;
+
 
 mongoose.connect('mongodb+srv://proyectoFinal:Bootcamp123.@cluster0.1a8rx.mongodb.net/reventa?retryWrites=true&w=majority').then(function(db){
 
@@ -87,6 +89,7 @@ app.post('/hacerLogin/:email', async function(req,res){
 
 });
 
+
 app.get('/obtenerUsuario/:email', async function(req,res){
 
     var email = req.params.email;
@@ -94,8 +97,17 @@ app.get('/obtenerUsuario/:email', async function(req,res){
     var busqueda = await Usuarios_model.findOne({email: email});
     console.log('El usuario que corresponde en busqueda es '+busqueda);
     console.log('El nombre de este usuario es: '+ busqueda.nombres);
+    usuarioActual= busqueda;
     res.send(busqueda.nombres);
     
+
+
+});
+
+app.get('/usuarioActual', async function(req,res){
+
+    console.log("Enviando usuario actual "+ usuarioActual);
+    res.send(usuarioActual);
 
 
 });

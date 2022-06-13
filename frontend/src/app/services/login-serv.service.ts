@@ -49,6 +49,12 @@ export class LoginServService {
 
   }
 
+
+  usuarioActual(){
+    let peticion = this.http.get<Usuario_modelo>(this.URL_API+'/usuarioActual');
+    return peticion;
+  }
+
   loginUsuario(email: string){
 
     let peticion = this.http.get(this.URL_API+'/obtenerUsuario/'+ email, {responseType: 'text'});

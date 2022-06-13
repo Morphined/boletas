@@ -1,21 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { InicioComponent } from './inicio.component';
+import { InfoUsuarioCompComponent } from './info-usuario-comp.component';
 
-
-describe('IninicioComponent', () => {
-  let component: InicioComponent;
-  let fixture: ComponentFixture<InicioComponent>;
+describe('InfoUsuarioCompComponent', () => {
+  let component: InfoUsuarioCompComponent;
+  let fixture: ComponentFixture<InfoUsuarioCompComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ InicioComponent ]
+      declarations: [ InfoUsuarioCompComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(InicioComponent);
+    fixture = TestBed.createComponent(InfoUsuarioCompComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

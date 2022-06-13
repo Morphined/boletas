@@ -21,12 +21,14 @@ import { NewEventCompComponent } from './components/new-event-comp/new-event-com
 import { objectToArrayPipe } from './objetcToArray.pipe';
 
 import { NgxPaginationModule } from 'ngx-pagination';
+import { InfoUsuarioCompComponent } from './components/info-usuario-comp/info-usuario-comp.component';
 
 
 const routes: Routes = [
 { path: 'crearUsuario', component: SignupCompComponent },
 { path: 'entrar', component: LoginCompComponent },
 {path: 'newEvent', component: NewEventCompComponent},
+{path: 'infoUsuario', component: InfoUsuarioCompComponent},
 { path: '', component: InicioComponent, pathMatch:'full'},
 { path: '**', redirectTo: '/', pathMatch: 'full' },
 
@@ -45,6 +47,7 @@ const routes: Routes = [
     FooterComponent,
     NewEventCompComponent,
     objectToArrayPipe,
+    InfoUsuarioCompComponent,
 
   ],
   imports: [

@@ -1,9 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { format } from 'path';
 import { LoginServService } from 'src/app/services/login-serv.service';
 import { Router } from '@angular/router';
-import { stringify } from 'querystring';
+
+
 
 
 
@@ -14,13 +15,18 @@ import { stringify } from 'querystring';
 })
 export class LoginCompComponent {
 
-   username: string;
-   estaloggeado: boolean;
+   username: string= 'Usuario';
+   estaloggeado: boolean= false;
 
+   @Input() prueba = this.username;
+   @Output() enviarUsuario = new EventEmitter<any>();
+
+   
 
   constructor(public servicioLogin: LoginServService, private router: Router){}
 
   
+    
 
 
   loginUsuario(email: string){
@@ -32,13 +38,14 @@ export class LoginCompComponent {
       
       
       
-      
     }, function(err){
       console.log(err);
     }
     )
     
   }
+
+    
   
 
 }
