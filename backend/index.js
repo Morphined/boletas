@@ -90,8 +90,12 @@ app.post('/hacerLogin/:email', async function(req,res){
 app.get('/obtenerUsuario/:email', async function(req,res){
 
     var email = req.params.email;
+    console.log('El email es '+email);
     var busqueda = await Usuarios_model.findOne({email: email});
-    return busqueda;
+    console.log('El usuario que corresponde en busqueda es '+busqueda);
+    console.log('El nombre de este usuario es: '+ busqueda.nombres);
+    res.send(busqueda.nombres);
+    
 
 
 });

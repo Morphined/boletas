@@ -49,11 +49,13 @@ export class LoginServService {
 
   }
 
-  obtenerUsuario(email: string){
+  loginUsuario(email: string){
 
-    let peticion = this.http.get(this.URL_API+'/obtenerUsuario/'+ email);
+    let peticion = this.http.get(this.URL_API+'/obtenerUsuario/'+ email, {responseType: 'text'});
     return peticion;
 
   }
+
+  
   
 }
