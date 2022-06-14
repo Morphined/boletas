@@ -15,8 +15,8 @@ import { Router } from '@angular/router';
 })
 export class LoginCompComponent {
 
-   username: string= 'Usuario';
-   estaloggeado: boolean= false;
+   public username: string= 'Usuario';
+   public estaloggeado: boolean= false;
 
    @Input() prueba = this.username;
    @Output() enviarUsuario = new EventEmitter<any>();

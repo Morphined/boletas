@@ -30,6 +30,12 @@
                                 <input type="text" id="form3Example3" #organizador class="form-control" name="organizadorEvento" [(ngModel)]="servicioEvento.datos_evento.organizadorEvento" />
                                 <label class='textoRegistro text-dark' for="form3Example3">Organizador</label>
                             </div>
+
+                            <div class="form-outline mb-4">
+                                <input type="text" id="form3Example3" #organizador class="form-control" name="emailCreado" [(ngModel)]="servicioEvento.datos_evento.emailCreador" />
+                                <label class='textoRegistro text-dark' for="form3Example3">Email Organizador</label>
+                            </div>
+
                             <div class="form-floating mb-4">
                                 <textarea #descripcion class="form-control text-dark" placeholder="Leave a comment here"
                                     id="floatingTextarea" name="descripcionEvento" [(ngModel)]="servicioEvento.datos_evento.descripcionEvento"></textarea>

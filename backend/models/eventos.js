@@ -4,6 +4,7 @@ var Schema = mongoose.Schema;
 
 var evento = new Schema({
     nombreEvento:String,
+    emailCreador:String,
     organizadorEvento:String,
     descripcionEvento:String,
     categoriaEvento:String,

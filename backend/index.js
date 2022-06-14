@@ -112,6 +112,44 @@ app.get('/usuarioActual', async function(req,res){
 
 });
 
+
+
+
+//////////////////////CRUD eventos
+
+
+
+app.delete('/eliminarEvento/:id', async function(req,res){
+
+    var id = req.params.id;
+    await eventos_model.findByIdAndRemove(id);
+    res.send({mensaje: 'evento eliminado'});
+
+});
+
+app.put('/modificarEvento/:id', async function(req,res){
+    var datos = req.params.id;
+
+    var modificar =await eventos_model.findbyId(id);
+
+    modificar.nombreEvento= req.body.nombreEvento,
+    modificar.emailCreador= req.body.emailCreador,
+    modificar.organizadorEvento=req.body.organizadorEvento,
+    modificar.descripcionEvento=req.body.descripcionEvento,
+    modificar.categoriaEvento= req.body.categoriaEvento,
+    modificar.fechaEvento= req.body.fechaEvento,
+    modificar.horaInicioEventoreq.body.horaInicioEventoreq,
+    modificar.horaFinalEvento=req.body.horaFinalEvento,
+    modificar.ciudadEvento=req.body.ciudadEvento,
+    modificar.paisEvento=req.body.paisEvento,
+    modificar.direccionEvento=req.body.direccionEvento,
+    modificar.imagenEvento=imagenEvento
+
+    
+
+    
+});
+
 app.post('/evento', async function(req,res){
     var datos_recibidos = req.body;
     var doc_insertado = new eventos_model(datos_recibidos);
@@ -130,7 +168,4 @@ app.get('/obtenerEventos', async function(req,res){
     console.log(busqueda)
 
 });
-
-
-
 

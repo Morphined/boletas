@@ -1,5 +1,6 @@
 export interface Evento_model{
     nombreEvento:string,
+    emailCreador: string,
     organizadorEvento:string,
     descripcionEvento:string,
     categoriaEvento:string,
