@@ -55,20 +55,23 @@ app.delete('/deleteUsuario/:id', async function(req,res){
 
 });
 
-app.put('/updateUsuario/:id', async function(req,res){
-    var datos = req.params.id;
+app.post('/updateUsuario', async function(req,res){
+   
+    var datos = req.body; //Recibe datos a actualizar de Angular
+    var nombres = datos.nombres;
+    var apellidos = datos.apellidos;
+    var tipo_identificacion = datos.tipo_identificacion;
+    var numero_identificacion = datos.numero_identificacion;
+    var ciudad = datos.ciudad;
+    var pais = datos.pais;
+    var email = datos.email;
+    var telefono = datos.telefono;
+    console.log("Buscando por correo: "+ usuarioActual.email);
+    console.log("Datos desde Angular \n nombre: "+nombres+" apellidos "+apellidos); //Muestra el documento con modelo que viene de Angular 
+    await Usuarios_model.findOneAndUpdate({email:usuarioActual.email},{$set:{nombres:nombres,apellidos:apellidos,tipo_identificacion:tipo_identificacion,numero_identificacion:numero_identificacion,ciudad:ciudad,pais:pais,email:email,telefono:telefono}});//busco el documento y lo actualizo
+    usuarioActual = datos;
+    res.send({respuesta:'Comunicación con Node OK'})
 
-    var modificar =await Usuarios_model.findbyId(id);
-    modificar.nombres = req.body.nombres;
-    modificar.apellidos = req.body.apellidos;
-    modificar.tipo_identificacion = req.body.tipo_identificacion;
-    modificar.numero_identificacion = req.body.numero_identificacion;
-    modificar.ciudad = req.body.ciudad;
-    modificar.pais = req.body.pais;
-    modificar.email = req.body.email;
-    modificar.telefono = req.body.telefono;
-    modificar.contrasena = req.body.contrasena;
-    
 
     
 });
