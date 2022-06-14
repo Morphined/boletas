@@ -1,6 +1,7 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { LoginServService } from 'src/app/services/login-serv.service';
 import { Usuario_modelo } from 'src/app/models/usuarios';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-info-usuario-comp',
@@ -28,6 +29,14 @@ export class InfoUsuarioCompComponent implements OnInit {
       console.log(err);
     });
 
+  }
+
+  guardarUsuario(form: NgForm){
+    this.servicioLogin.updateUsuario(form.value).subscribe((res)=>{
+        console.log('Guardando usuario en BD '+ res);
+    }, function(err){
+      console.log(err);
+    });
   }
 
 }

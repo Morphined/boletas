@@ -1,30 +1,34 @@
-<div class="container rounded bg-white mt-5 mb-5 text-dark">
-    <div class="row">
-        <div class="col-md-3 border-right">
-            <div class="d-flex flex-column align-items-center text-center p-3 py-5"><img class="rounded-circle mt-5" width="150px" src="https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg"><span class="font-weight-bold">{{usuario.nombres}}</span><span class="text-black-50">{{usuario.email}}</span><span> </span></div>
-        </div>
-        <div class="col-md-5 border-right">
-            <div class="p-3 py-5">
-                <div class="d-flex justify-content-between align-items-center mb-3">
-                    <h4 class="text-right">Perfil de usuario para {{usuario.email}} </h4>
-                </div>
-                <div class="row mt-2">
-                    <div class="col-md-6"><label class="labels">Nombres</label><input type="text" class="form-control" placeholder="{{usuario.nombres}}" ></div>
-                    <div class="col-md-6"><label class="labels">Apellidos</label><input type="text" class="form-control" value="" placeholder="{{usuario.apellidos}}"></div>
-                </div>
-                <div class="row mt-3">
-                    <div class="col-md-12"><label class="labels">Tipo identificación</label><input type="text" class="form-control" placeholder="{{usuario.tipo_identificacion}}" value=""></div>
-                    <div class="col-md-12"><label class="labels">Número ID</label><input type="text" class="form-control" placeholder="{{usuario.numero_identificacion}}" value=""></div>
-                    <div class="col-md-12"><label class="labels">Teléfono</label><input type="text" class="form-control" placeholder="{{usuario.telefono}}" value=""></div>
-                    <div class="col-md-12"><label class="labels">País</label><input type="text" class="form-control" placeholder="{{usuario.pais}}" value=""></div>
-                    <div class="col-md-12"><label class="labels">E-mail</label><input type="text" class="form-control" placeholder="{{usuario.email}}" value=""></div>
-                    <div class="col-md-12"><label class="labels">ID único</label><input type="text" class="form-control" placeholder="{{usuario._id}}" disabled></div>
-                </div>
-              
-                <div class="mt-5 text-center"><button class="btn btn-primary profile-button" type="button">Guardar información de perfil</button></div>
+<form #modificarUsuario="ngForm" (ngSubmit)="guardarUsuario(modificarUsuario)">
+    <div class="container rounded bg-white mt-5 mb-5 text-dark">
+        <div class="row">
+            <div class="col-md-3 border-right">
+                <div class="d-flex flex-column align-items-center text-center p-3 py-5"><img class="rounded-circle mt-5" width="150px" src="https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg"><span class="font-weight-bold">{{usuario.nombres}}</span><span class="text-black-50">{{usuario.email}}</span><span> </span></div>
             </div>
+            <div class="col-md-5 border-right">
+                <div class="p-3 py-5">
+                    <div class="d-flex justify-content-between align-items-center mb-3">
+                        <h4 class="text-right">Perfil de usuario para {{usuario.email}} </h4>
+                    </div>
+                    <div class="row mt-2">
+                        <div class="col-md-6"><label class="labels">Nombres</label><input type="text" class="form-control" placeholder="{{usuario.nombres}}" name="nombres" [(ngModel)]="servicioLogin.datos_Usuario.nombres" value="{{usuario.nombres}}"></div>
+                        <div class="col-md-6"><label class="labels">Apellidos</label><input type="text" class="form-control" value="" placeholder="{{usuario.apellidos}}" name="apellidos" [(ngModel)]="servicioLogin.datos_Usuario.apellidos"></div>
+                    </div>
+                    <div class="row mt-3">
+                        <div class="col-md-12"><label class="labels">Tipo identificación</label><input type="text" class="form-control" placeholder="{{usuario.tipo_identificacion}}" name="tipo_identificacion" [(ngModel)]="servicioLogin.datos_Usuario.tipo_identificacion"></div>
+                        <div class="col-md-12"><label class="labels">Número ID</label><input type="text" class="form-control" placeholder="{{usuario.numero_identificacion}}" name="numero_identificacion" [(ngModel)]="servicioLogin.datos_Usuario.numero_identificacion"></div>
+                        <div class="col-md-12"><label class="labels">Teléfono</label><input type="text" class="form-control" placeholder="{{usuario.telefono}}" name="telefono" [(ngModel)]="servicioLogin.datos_Usuario.telefono"></div>
+                        <div class="col-md-12"><label class="labels">País</label><input type="text" class="form-control" placeholder="{{usuario.pais}}" name="pais" [(ngModel)]="servicioLogin.datos_Usuario.pais"></div>
+                        <div class="col-md-12"><label class="labels">Ciudad</label><input type="text" class="form-control" placeholder="{{usuario.ciudad}}" name="ciudad" [(ngModel)]="servicioLogin.datos_Usuario.ciudad"></div>
+                        <div class="col-md-12"><label class="labels">E-mail</label><input type="text" class="form-control" placeholder="{{usuario.email}}" name="email" [(ngModel)]="servicioLogin.datos_Usuario.email"></div>
+                        <div class="col-md-12"><label class="labels">ID único</label><input type="text" class="form-control" placeholder="{{usuario._id}}" disabled></div>
+                    </div>
+                  
+                    <div class="mt-5 text-center"><button class="btn btn-primary profile-button" type="submit">Guardar información de perfil</button></div>
+                </div>
+            </div>
+            
         </div>
-        
     </div>
-</div>
-
+    </form>
+    
+    

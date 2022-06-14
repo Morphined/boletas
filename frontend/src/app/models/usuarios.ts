@@ -7,6 +7,7 @@ export interface Usuario_modelo {
     pais: string,
     email: string,
     telefono: string,
-    password: string,
+    contrasena: string,
+    login: boolean,
     _id?:string
 }

@@ -21,7 +21,8 @@ export class LoginServService {
     pais: '',
     email:'',
     telefono:'',
-    password:''
+    contrasena:'',
+    login: false
   }
 
 
@@ -44,11 +45,15 @@ export class LoginServService {
 
   updateUsuario(datos: Usuario_modelo){
 
-    let peticion = this.http.put(this.URL_API+ '/updateUsuario', datos);
+    let peticion = this.http.post(this.URL_API+ '/updateUsuario', datos);
     return peticion;
 
   }
 
+  usuarioLog(){
+    let peticion = this.http.get<boolean>(this.URL_API+'/loginHecho');
+    return peticion;
+  }
 
   usuarioActual(){
     let peticion = this.http.get<Usuario_modelo>(this.URL_API+'/usuarioActual');
