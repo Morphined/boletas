@@ -35,6 +35,8 @@ export class LoginCompComponent {
       
       this.username = res;
       this.estaloggeado = true;
+      alert("Bienvenido "+ this.username);
+      window.location.href= 'http://localhost:4200';
       
       
       

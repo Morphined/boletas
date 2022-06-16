@@ -42,7 +42,7 @@
                 </div>
                 <div class="col-md-6 mb-4">
                   <div class="form-outline">
-                    <input type="password" id="form3Example2" name="txtPassword" class="form-control"   />
+                    <input type="password" id="form3Example2" name="contrasena" class="form-control"  [(ngModel)]="servicioLogin.datos_Usuario.contrasena" />
                     <label  class='textoPassword' for="form3Example2">Contraseña</label>
                   </div>
                 </div>
@@ -66,8 +66,8 @@
 
               
             </form>
-           <div *ngIf="estaloggeado==true; else otraCosa"><p>Bienvenido {{username}}</p></div>
-           <ng-template #otraCosa><p>Esperando información de usuario</p></ng-template>
+           <div *ngIf="estaloggeado==true; else otraCosa" class="text-dark"><p>Bienvenido {{username}}</p></div>
+           <ng-template #otraCosa><p></p></ng-template>
           </div>
         </div>
       </div>

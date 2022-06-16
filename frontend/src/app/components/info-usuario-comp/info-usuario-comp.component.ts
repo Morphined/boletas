@@ -34,6 +34,8 @@ export class InfoUsuarioCompComponent implements OnInit {
   guardarUsuario(form: NgForm){
     this.servicioLogin.updateUsuario(form.value).subscribe((res)=>{
         console.log('Guardando usuario en BD '+ res);
+        alert('Información de usuario actualizada');
+        window.location.href = '/';
     }, function(err){
       console.log(err);
     });
