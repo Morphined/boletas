@@ -20,6 +20,7 @@ export class CrearBoletasService {
     correo:'',
     celular:0,
     evento:'',
+    fecha:'',
     cantidad:0,
     precio:0,
     moneda:'',

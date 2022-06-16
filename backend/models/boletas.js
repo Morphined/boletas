@@ -7,6 +7,7 @@ var boleta = new Schema({
     correo:String,
     celular:Number,
     evento:String,
+    fecha: String,
     cantidad:Number,
     precio:Number,
     moneda:String,

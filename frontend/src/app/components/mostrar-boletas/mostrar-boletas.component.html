@@ -1,15 +1,13 @@
-<main>
-  <div class="medio">
-    <app-medio></app-medio>
-  </div>
-  <hr>
-  <app-proximos></app-proximos>
+<div class="container proximos">
+
+<h3>Boleteria disponible</h3>
+<article>
   <div class="row row-cols-1 row-cols-md-4 g-4 m-3">
 
-        <div *ngFor="let i of mostrarBoletasService.doc_boletas | paginate: { itemsPerPage: 4, currentPage: p, totalItems: total }">
-
+        <div class="mt-10" *ngFor="let i of mostrarBoletasService.doc_boletas | paginate: { itemsPerPage: 4, currentPage: p, totalItems: total }">
+<!---->
           <div class="col">
-            <div class="card h-100">
+            <div class="card h-100 m">
               <div class="card-body align-content-center text-dark">
                 <span>Vendedor:</span>
                 <h5 class="card-title text-dark titulo">   {{i.usuario}}"</h5>
@@ -34,11 +32,13 @@
         </div>
 
 </div>
+</article>
 
 <div class="container divPagination">
 <pagination-controls (pageChange)="pageChangeEvent($event)"></pagination-controls>
 </div>
 
+</div>
 
-</main>
+
 

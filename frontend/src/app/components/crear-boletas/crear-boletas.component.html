@@ -39,6 +39,13 @@
                                     name="evento" [(ngModel)]="crearBoletasServ.datosBoletas.evento" value="crearBoletasServ.obtenerNombre"/>
                                 <label class='textoRegistro text-dark' for="form3Example3">Nombre de Evento</label>
                             </div>
+
+                            <div class="form-outline mb-4">
+                              <input type="date" id="form3Example3" class="form-control"
+                                  name="fecha" [(ngModel)]="crearBoletasServ.datosBoletas.fecha"/>
+                              <label class='textoRegistro text-dark' for="form3Example3">Fecha del Evento</label>
+                          </div>
+
                             <div class="form-floating mb-4">
                                 <input type="number" class="form-control" name="cantidad" [(ngModel)]="crearBoletasServ.datosBoletas.cantidad">
                                 <label class="textoregistro text-dark" for="floatingTextarea">Cantidad</label>
@@ -58,7 +65,7 @@
                                 <option value="ahorros">Consignación cuenta ahorros</option>
                                 <option value="pse">PSE</option>
                             </select>
-                            
+
 
 
                             <!-- Submit button -->

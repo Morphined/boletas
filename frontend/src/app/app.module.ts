@@ -24,7 +24,7 @@ import { CrearBoletasComponent } from './components/crear-boletas/crear-boletas.
 import { NgxPaginationModule } from 'ngx-pagination';
 import { InfoUsuarioCompComponent } from './components/info-usuario-comp/info-usuario-comp.component';
 import { AppRoutingModule } from './app-routing.module';
-import { MostrarBoletasComponent } from './components/components/mostrar-boletas/mostrar-boletas.component';
+import { MostrarBoletasComponent } from './components/mostrar-boletas/mostrar-boletas.component';
 
 const routes: Routes = [
 { path: 'crearUsuario', component: SignupCompComponent },
@@ -52,7 +52,7 @@ const routes: Routes = [
     objectToArrayPipe,
     InfoUsuarioCompComponent,
     CrearBoletasComponent,
-    MostrarBoletasComponent
+    MostrarBoletasComponent,
 
   ],
   imports: [

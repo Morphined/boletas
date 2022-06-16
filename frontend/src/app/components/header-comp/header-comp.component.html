@@ -29,7 +29,7 @@
       </ul>
       <form  class="d-flex" role="search">
         <input #buscarForm class="form-control me-2" type="search" placeholder="Buscar evento, concierto, ciudad etc..." aria-label="Search" size="60">
-        <button (click)="buscarEventos(buscarForm)" class="btn btn-outline-success" type="submit">Buscar</button>
+        <button (click)="buscarEventos(buscarForm)" routerLink="/mostrarEventosBuscados" class="btn btn-outline-success" type="submit">Buscar</button>
       </form>
     </div>
   </div>
