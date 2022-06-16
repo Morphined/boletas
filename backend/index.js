@@ -9,6 +9,7 @@ app.use(cors());
 
 var Usuarios_model = require('./models/Usuarios');
 var eventos_model = require("./models/eventos");
+var boletas_model = require("./models/boletas");
 const eventos = require('./models/eventos');
 
 var usuarioActual;
@@ -186,5 +187,13 @@ app.get('/buscarEventos/:parametro', async function(req, res){
     res.send(busqueda)
     console.log(busqueda)
 
+})
+
+app.post('/publicarBoletas', async function(req,res){
+    var datos_recibidos = req.body;
+    var doc_insertado = new boletas_model(datos_recibidos);
+    await doc_insertado.save();
+    res.send({respuesta:"boletas agregadas"});
+    console.log(doc_insertado);
 })
 

@@ -1,0 +1,80 @@
+<!-- Section: Design Block -->
+<section class="background-radial-gradient overflow-hidden">
+
+
+    <div class="container px-4 py-5 px-md-5 text-center text-lg-start my-5">
+        <div class="row gx-lg-5 align-items-center mb-5">
+
+
+            <div class="col-lg-6 mb-5 mb-lg-0 position-relative">
+                <div id="radius-shape-1" class="position-absolute rounded-circle shadow-5-strong"></div>
+                <div id="radius-shape-2" class="position-absolute shadow-5-strong"></div>
+
+                <div class="card bg-glass">
+                    <div class="card-body px-4 py-5 px-md-5">
+                        <form #boletasForm="ngForm" (ngSubmit)="publicarBoletas(boletasForm)">
+                            <!-- 2 column grid layout with text inputs for the first and last names -->
+                            <div class="row">
+                                <div class="col-md-6 mb-4">
+                                    <div class="form-outline">
+                                        <label class='textoRegistro text-dark' for="form3Example1"><strong>Registro de
+                                                Venta de Boletas</strong></label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-outline mb-4">
+                                <input type="text" id="form3Example3" class="form-control" #usuario name="usuario" [(ngModel)]="crearBoletasServ.datosBoletas.usuario" />
+                                <label class='textoRegistro text-dark' for="form3Example3">Usuario</label>
+                            </div>
+                            <div class="form-outline mb-4">
+                                <input type="email" id="form3Example3" class="form-control" #correo name="correo" [(ngModel)]="crearBoletasServ.datosBoletas.correo" />
+                                <label class='textoRegistro text-dark' for="form3Example3">Correo Electrónico</label>
+                            </div>
+                            <div class="form-outline mb-4">
+                                <input type="number" id="form3Example3" class="form-control" #celular name="celular"  [(ngModel)]="crearBoletasServ.datosBoletas.celular" />
+                                <label class='textoRegistro text-dark' for="form3Example3">Celular</label>
+                            </div>
+                            <div class="form-outline mb-4">
+                                <input type="text" id="form3Example3" #evento class="form-control"
+                                    name="evento" [(ngModel)]="crearBoletasServ.datosBoletas.evento" value="crearBoletasServ.obtenerNombre"/>
+                                <label class='textoRegistro text-dark' for="form3Example3">Nombre de Evento</label>
+                            </div>
+                            <div class="form-floating mb-4">
+                                <input type="number" class="form-control" name="cantidad" [(ngModel)]="crearBoletasServ.datosBoletas.cantidad">
+                                <label class="textoregistro text-dark" for="floatingTextarea">Cantidad</label>
+                            </div>
+                            <div class="form-floating mb-4">
+                                <input type="number" class="form-control" name="precio" [(ngModel)]="crearBoletasServ.datosBoletas.precio">
+                                <label class="textoregistro text-dark" for="floatingTextarea">Precio Unitario</label>
+                            </div>
+                            <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" name="moneda" [(ngModel)]="crearBoletasServ.datosBoletas.moneda">
+                                <option selected>Moneda</option>
+                                <option value="COP">COP</option>
+                                <option value="USD">USD</option>
+                                <option value="EUR">EUR</option>
+                            </select>
+                            <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" name="metodoPago" [(ngModel)]="crearBoletasServ.datosBoletas.metodoPago">
+                                <option selected>Metodo de pago</option>
+                                <option value="ahorros">Consignación cuenta ahorros</option>
+                                <option value="pse">PSE</option>
+                            </select>
+                            
+
+
+                            <!-- Submit button -->
+                            <button type="submit" class="btn btn-dark btn-block mb-4">
+                                Publicar
+                            </button>
+
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</section>
+
+<!-- Section: Design Block -->

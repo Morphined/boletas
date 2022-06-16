@@ -19,6 +19,7 @@ import { InicioComponent } from './components/inicio/inicio.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { NewEventCompComponent } from './components/new-event-comp/new-event-comp.component';
 import { objectToArrayPipe } from './objetcToArray.pipe';
+import { CrearBoletasComponent } from './components/crear-boletas/crear-boletas.component';
 
 import { NgxPaginationModule } from 'ngx-pagination';
 import { InfoUsuarioCompComponent } from './components/info-usuario-comp/info-usuario-comp.component';
@@ -30,7 +31,7 @@ const routes: Routes = [
 {path: 'newEvent', component: NewEventCompComponent},
 {path: 'infoUsuario', component: InfoUsuarioCompComponent},
 { path: '', component: InicioComponent, pathMatch:'full'},
-{ path: '**', redirectTo: '/', pathMatch: 'full' },
+{path: 'crearBoletas', component:CrearBoletasComponent, pathMatch: 'full'  },
 
  ];
 
@@ -48,6 +49,7 @@ const routes: Routes = [
     NewEventCompComponent,
     objectToArrayPipe,
     InfoUsuarioCompComponent,
+    CrearBoletasComponent
 
   ],
   imports: [
