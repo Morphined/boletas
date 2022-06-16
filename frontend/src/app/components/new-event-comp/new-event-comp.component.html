@@ -37,7 +37,7 @@
                             </div>
 
                             <div class="form-floating mb-4">
-                                <textarea #descripcion class="form-control text-dark" placeholder="Leave a comment here"
+                                <textarea #descripcion class="form-control text-dark" placeholder="Leave a comment here" maxlength="200" minlength="20"
                                     id="floatingTextarea" name="descripcionEvento" [(ngModel)]="servicioEvento.datos_evento.descripcionEvento"></textarea>
                                 <label class="textoregistro text-dark" for="floatingTextarea">Descripcción</label>
                             </div>
@@ -92,7 +92,7 @@
                                 <label class='textoRegistro text-dark' for="form3Example3">Dirección</label>
                             </div>
                             <div class="form-outline mb-4">
-                                <input type="file" id="form3Example3" class="form-control" name="imagenEvento" [(ngModel)]="servicioEvento.datos_evento.imagenEvento"/>
+                                <input type="text" id="form3Example3" class="form-control" name="imagenEvento" [(ngModel)]="servicioEvento.datos_evento.imagenEvento"/>
                                 <label class='textoRegistro text-dark' for="form3Example3">Imagen Promocional</label>
                             </div>
 
@@ -107,7 +107,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col cardHija">
+            <div class="col-4 hija">
 
                 <h1 class="mb-5">Registra tu evento</h1>
                 <div class="card">
@@ -119,9 +119,11 @@
                         <hr style="color: grey;">
                         <label class="lblCategoria">{{categorias.value}}</label> &nbsp;
                         <label class="lblCategoria">{{categorias.value}}</label>
-                        <p class="card-text text-dark">{{descripcion.value}}</p>
-                        
-                        
+
+                        <div class="descripcion"><p class="card-text text-dark ">{{descripcion.value}}</p></div>
+
+
+
                     </div>
                 </div>
             </div>

@@ -172,3 +172,19 @@ app.get('/obtenerEventos', async function(req,res){
 
 });
 
+app.get('/buscarEventos/:parametro', async function(req, res){
+    
+    let busqueda = await eventos_model.find({$or:[
+    {nombreEvento:{$regex: req.params.parametro, $options:'i'}},
+    {organizadorEvento:{$regex: req.params.parametro, $options:'i'}},
+    {descripcionEvento:{$regex: req.params.parametro, $options:'i'}},
+    {categoriaEvento:{$regex: req.params.parametro, $options:'i'}},
+    {ciudadEvento:{$regex: req.params.parametro, $options:'i'}},
+    {paisEvento:{$regex: req.params.parametro, $options:'i'}},
+    {direccionEvento:{$regex: req.params.parametro, $options:'i'}},
+]})
+    res.send(busqueda)
+    console.log(busqueda)
+
+})
+

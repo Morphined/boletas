@@ -40,7 +40,7 @@ export class EventoServiceService {
     return this.http.get<Evento_model[]>(this.URL_API + '/obtenerEventos')
   };
 
-  
+
 
   eliminarEventos(id: string) {
     //petición HTTP al servidor de NODE --> DELETE http://localhost:3000/eliminar_video/12345AAD1231
@@ -48,7 +48,11 @@ export class EventoServiceService {
     return peticion;
    }
 
-   
+   buscarEventos(busqueda:string){
+      return this.http.get(this.URL_API+'/buscarEventos/'+busqueda)
+   }
+
+
 
 
   }

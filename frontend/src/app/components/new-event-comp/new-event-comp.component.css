@@ -36,3 +36,8 @@
         hsl(218, 41%, 19%) 80%,
         transparent 100%);
   }
+
+  .descripcion{
+    overflow-wrap: break-word;
+    inline-size: 320px;
+  }

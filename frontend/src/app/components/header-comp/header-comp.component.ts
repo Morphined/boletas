@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { EventoServiceService } from '../../services/evento-service.service'
+
 
 
 @Component({
@@ -8,11 +10,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderCompComponent implements OnInit {
 
-  constructor() { }
+
+  constructor(private servicio: EventoServiceService) { }
 
   ngOnInit(): void {
   }
 
-  
+  buscarEventos(datos: any){
+    console.log(datos.value)
+      this.servicio.buscarEventos(datos.value).subscribe
+      ({next:(res:any)=>{
+        this.servicio.documentos=res
+      }, error:(err)=>{
+        console.log(err)
+      }});
+
+  }
+
+
 
 }

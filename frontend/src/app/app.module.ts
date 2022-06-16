@@ -22,7 +22,7 @@ import { objectToArrayPipe } from './objetcToArray.pipe';
 
 import { NgxPaginationModule } from 'ngx-pagination';
 import { InfoUsuarioCompComponent } from './components/info-usuario-comp/info-usuario-comp.component';
-
+import { AppRoutingModule } from './app-routing.module';
 
 const routes: Routes = [
 { path: 'crearUsuario', component: SignupCompComponent },
@@ -51,6 +51,7 @@ const routes: Routes = [
 
   ],
   imports: [
+    AppRoutingModule,
     FormsModule,
     NgxPaginationModule,
   BrowserModule,

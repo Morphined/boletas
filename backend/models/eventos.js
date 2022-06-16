@@ -15,7 +15,6 @@ var evento = new Schema({
     paisEvento:String,
     direccionEvento:String,
     imagenEvento:String
-
     
 },
 //para registrar hora de guardado
