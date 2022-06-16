@@ -1,0 +1,44 @@
+<main>
+  <div class="medio">
+    <app-medio></app-medio>
+  </div>
+  <hr>
+  <app-proximos></app-proximos>
+  <div class="row row-cols-1 row-cols-md-4 g-4 m-3">
+
+        <div *ngFor="let i of mostrarBoletasService.doc_boletas | paginate: { itemsPerPage: 4, currentPage: p, totalItems: total }">
+
+          <div class="col">
+            <div class="card h-100">
+              <div class="card-body align-content-center text-dark">
+                <span>Vendedor:</span>
+                <h5 class="card-title text-dark titulo">   {{i.usuario}}"</h5>
+
+                <h5 for="" style="color: rgb(139, 139, 139); font-size: large;">Email: {{i.correo}}</h5>
+                <h5 style="color: rgb(139, 139, 139); font-size: large;">Celular: {{i.celular}}</h5>
+
+                <hr style="color: grey;">
+                <p class="lblCategoria">Nombre del evento: {{i.evento}}</p>
+                <p class="lblCategoria">Precio de la boleta: {{i.precio}}</p>
+                <p class="lblCategoria">Disponibles: {{i.cantidad}}</p>
+                <p class="lblCategoria">Moneda: {{i.moneda}}</p>
+                <p class="lblCategoria">Metodo de pago: {{i.metodoPago}}</p>
+
+
+
+
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+</div>
+
+<div class="container divPagination">
+<pagination-controls (pageChange)="pageChangeEvent($event)"></pagination-controls>
+</div>
+
+
+</main>
+

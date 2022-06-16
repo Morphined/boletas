@@ -1,0 +1,16 @@
+
+.body div label{
+  color: #000;
+}
+.p{
+
+  border-radius: 2px;
+  font-size: 14px;
+  padding: 2px;
+  margin: 0px;
+  margin-bottom: 10   px;
+}
+
+.titulo{
+  text-transform: uppercase;
+}

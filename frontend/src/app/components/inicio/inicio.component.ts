@@ -3,6 +3,7 @@ import { json } from 'body-parser';
 import { EventoServiceService } from 'src/app/services/evento-service.service';
 import { LoginCompComponent } from '../login-comp/login-comp.component';
 import { Evento_model } from 'src/app/models/eventos';
+import { CrearBoletasService } from 'src/app/services/crear-boletas.service';
 
 @Component({
   selector: 'app-inicio',
@@ -18,7 +19,7 @@ export class InicioComponent implements OnInit {
     this.username = username;
   }
 
-  constructor(public servicioEvento: EventoServiceService) {}
+  constructor(public servicioEvento: EventoServiceService, public mostrarBoletasService: CrearBoletasService ) {}
 
   ngOnInit(): void {
     this.listadoEventos();
@@ -54,5 +55,5 @@ export class InicioComponent implements OnInit {
     }
   }
 
-  
+
 }

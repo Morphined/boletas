@@ -36,9 +36,9 @@
                   <p class="card-text text-dark">{{i.descripcionEvento}}</p>
                   <hr style="color: grey;">
                   <a class="btn btn-dark" href="#" role="button" routerLink="/crearBoletas">Vender</a>
-                  <button type="button" class="btn btn-info">Comprar</button>
+                  <button type="button" class="btn btn-info" routerLink="/mostrarBoletas">Comprar</button>
 
-                  <button  type="button" class="btn btn-warning justify-content-end">Modificar</button>
+
                   <button type="button" class="btn btn-danger justify-content-end"  (click)="eliminarEvento(i._id)" >Eliminar</button>
                 </div>
               </div>

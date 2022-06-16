@@ -197,3 +197,12 @@ app.post('/publicarBoletas', async function(req,res){
     console.log(doc_insertado);
 })
 
+app.get('/mostrarBoletas', async function(req,res){
+
+    console.log('Realizando operación de obtención de boletas en base de datos');
+    var busqueda = await boletas_model.find();
+    res.send(busqueda);
+
+    console.log(busqueda)
+
+});

@@ -16,7 +16,7 @@ export class CrearBoletasService {
   doc_boletas:Boletas_model[]=[];
 
   datosBoletas:Boletas_model = {
-    usuario:'', 
+    usuario:'',
     correo:'',
     celular:0,
     evento:'',
@@ -31,11 +31,16 @@ export class CrearBoletasService {
   publicarBoletas(datos:Boletas_model){
     let peticion = this.http.post(this.URL_API + '/publicarBoletas/',datos);
     return peticion
-  
+
   }
 
   obtenerNombre(id:string){
     let nombreEv = this.http.get(this.URL_API +'/obtenerEvento/:id');
     return nombreEv;
+  }
+
+  mostrarBoletas(){
+    let mostrarBoletas = this.http.get(this.URL_API+'/mostrarBoletas')
+    return mostrarBoletas
   }
 }

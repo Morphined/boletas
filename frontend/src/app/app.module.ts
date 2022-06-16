@@ -24,11 +24,13 @@ import { CrearBoletasComponent } from './components/crear-boletas/crear-boletas.
 import { NgxPaginationModule } from 'ngx-pagination';
 import { InfoUsuarioCompComponent } from './components/info-usuario-comp/info-usuario-comp.component';
 import { AppRoutingModule } from './app-routing.module';
+import { MostrarBoletasComponent } from './components/components/mostrar-boletas/mostrar-boletas.component';
 
 const routes: Routes = [
 { path: 'crearUsuario', component: SignupCompComponent },
 { path: 'entrar', component: LoginCompComponent },
 {path: 'newEvent', component: NewEventCompComponent},
+{path: 'mostrarBoletas', component: MostrarBoletasComponent},
 {path: 'infoUsuario', component: InfoUsuarioCompComponent},
 { path: '', component: InicioComponent, pathMatch:'full'},
 {path: 'crearBoletas', component:CrearBoletasComponent, pathMatch: 'full'  },
@@ -49,7 +51,8 @@ const routes: Routes = [
     NewEventCompComponent,
     objectToArrayPipe,
     InfoUsuarioCompComponent,
-    CrearBoletasComponent
+    CrearBoletasComponent,
+    MostrarBoletasComponent
 
   ],
   imports: [
